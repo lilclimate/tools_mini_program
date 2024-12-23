@@ -1,6 +1,6 @@
 <view class="container">
   <view class="section">
-    <view class="section-title">时间(（年/月/日 时:分:秒)</view>
+    <view class="section-title">时间(年/月/日 时:分:秒)</view>
     <view class="input-area">
       <input type="text" value="{{dateTime}}" bindinput="onDateTimeInput" />
       <view class="copy-btn" bindtap="copyDateTime">复制</view>
@@ -10,6 +10,8 @@
   <view class="button-group">
     <button class="convert-btn" bindtap="onDateTimeToTimestamp">转时间戳</button>
     <button class="convert-btn" bindtap="onTimestampToDateTime">转时间</button>
+    <button class="convert-btn" bindtap="getCurrentTime">获取当前时间</button>
+    <button class="convert-btn" bindtap="clearInputs">清空</button>
   </view>
 
   <view class="section">

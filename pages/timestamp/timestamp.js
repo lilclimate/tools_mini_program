@@ -103,5 +103,21 @@ Page({
         });
       }
     });
+  },
+
+  getCurrentTime() {
+    const currentTime = moment().format('YYYY/MM/DD HH:mm:ss');
+    const currentTimestamp = moment().unix();
+    this.setData({
+      dateTime: currentTime,
+      timestamp: currentTimestamp.toString()
+    });
+  },
+
+  clearInputs() {
+    this.setData({
+      dateTime: '',
+      timestamp: ''
+    });
   }
 });
