@@ -1,0 +1,6 @@
+<view class="container">
+  <textarea placeholder="输入Base64编码或解码内容" bindinput="onInput"></textarea>
+  <button bindtap="onEncode">编码</button>
+  <button bindtap="onDecode">解码</button>
+  <text>{{result}}</text>
+</view> 

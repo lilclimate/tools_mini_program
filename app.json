@@ -1,0 +1,7 @@
+{
+  "pages": [
+    "pages/tools/tools",
+    "pages/base64/base64",
+    "pages/timestamp/timestamp"
+  ]
+} 

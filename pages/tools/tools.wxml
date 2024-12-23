@@ -1,0 +1,4 @@
+<view class="container">
+  <button bindtap="onBase64Decode">Base64 编码解码</button>
+  <button bindtap="onTimestampConvert">时间戳转化</button>
+</view> 
