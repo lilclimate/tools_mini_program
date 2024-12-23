@@ -1,18 +1,22 @@
 <view class="container">
-  <view class="input-group">
-    <label>日期时间</label>
-    <view class="input-with-button">
-      <input placeholder="输入日期时间，格式: 2020-02-02 12:03" bindinput="onDateTimeInput" value="{{dateTime}}"/>
-      <button bindtap="copyDateTime">复制</button>
+  <view class="section">
+    <view class="section-title">时间</view>
+    <view class="input-area">
+      <input type="text" value="{{dateTime}}" bindinput="onDateTimeInput" />
+      <view class="copy-btn" bindtap="copyDateTime">复制</view>
     </view>
-    <button bindtap="onDateTimeToTimestamp">日期时间转时间戳</button>
   </view>
-  <view class="input-group">
-    <label>时间戳</label>
-    <view class="input-with-button">
-      <input placeholder="输入时间戳，支持秒级和毫秒级" bindinput="onTimestampInput" value="{{timestamp}}"/>
-      <button bindtap="copyTimestamp">复制</button>
+  
+  <view class="button-group">
+    <button class="convert-btn" bindtap="onDateTimeToTimestamp">转时间戳</button>
+    <button class="convert-btn" bindtap="onTimestampToDateTime">转时间</button>
+  </view>
+
+  <view class="section">
+    <view class="section-title">时间戳</view>
+    <view class="input-area">
+      <input type="text" value="{{timestamp}}" bindinput="onTimestampInput" />
+      <view class="copy-btn" bindtap="copyTimestamp">复制</view>
     </view>
-    <button bindtap="onTimestampToDateTime">时间戳转日期时间</button>
   </view>
-</view> 
+</view>
