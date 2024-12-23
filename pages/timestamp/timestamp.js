@@ -28,21 +28,19 @@ Page({
       return;
     }
 
-    try {
-      const date = new Date(dateTime);
-      if (isNaN(date.getTime())) {
-        throw new Error('Invalid date');
-      }
-      const timestamp = Math.floor(date.getTime() / 1000);
-      this.setData({
-        timestamp: timestamp.toString()
-      });
-    } catch (error) {
+    const m = moment(dateTime, 'YYYY/MM/DD HH:mm:ss');
+    if (!m.isValid()) {
       wx.showToast({
         title: '日期格式无效',
         icon: 'none'
       });
+      return;
     }
+
+    const timestamp = m.unix();
+    this.setData({
+      timestamp: timestamp.toString()
+    });
   },
 
   onTimestampToDateTime() {
@@ -61,15 +59,17 @@ Page({
         throw new Error('Invalid timestamp');
       }
       
-      // Convert to milliseconds if in seconds
-      const timestampMs = timestamp.toString().length <= 10 ? timestamp * 1000 : timestamp;
-      const date = new Date(timestampMs);
-      
-      if (isNaN(date.getTime())) {
+      // 如果是毫秒级时间戳，转换为秒级
+      if (timestamp.toString().length > 10) {
+        timestamp = Math.floor(timestamp / 1000);
+      }
+
+      const m = moment.unix(timestamp);
+      if (!m.isValid()) {
         throw new Error('Invalid date');
       }
 
-      const formattedDate = date.toISOString().slice(0, 19).replace('T', ' ');
+      const formattedDate = m.format('YYYY/MM/DD HH:mm:ss');
       this.setData({
         dateTime: formattedDate
       });

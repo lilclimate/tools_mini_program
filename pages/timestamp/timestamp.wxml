@@ -1,6 +1,6 @@
 <view class="container">
   <view class="section">
-    <view class="section-title">时间</view>
+    <view class="section-title">时间(（年/月/日 时:分:秒)</view>
     <view class="input-area">
       <input type="text" value="{{dateTime}}" bindinput="onDateTimeInput" />
       <view class="copy-btn" bindtap="copyDateTime">复制</view>
