@@ -1,6 +1,23 @@
 <view class="container">
-  <textarea placeholder="输入Base64编码或解码内容" bindinput="onInput"></textarea>
-  <button bindtap="onEncode">编码</button>
-  <button bindtap="onDecode">解码</button>
-  <text>{{result}}</text>
+  <view class="section">
+    <view class="section-title">Base64 编码/解码</view>
+    <view class="input-area">
+      <input type="text" value="{{input}}" bindinput="onInput" placeholder="输入Base64编码或解码内容" />
+      <view class="copy-btn" bindtap="copyInput">复制</view>
+    </view>
+  </view>
+  
+  <view class="button-group">
+    <button class="convert-btn" bindtap="onEncode">编码</button>
+    <button class="convert-btn" bindtap="onDecode">解码</button>
+    <button class="convert-btn" bindtap="clearInputs">清空</button>
+  </view>
+
+  <view class="section">
+    <view class="section-title">结果</view>
+    <view class="input-area">
+      <input type="text" value="{{result}}" disabled />
+      <view class="copy-btn" bindtap="copyResult">复制</view>
+    </view>
+  </view>
 </view> 
